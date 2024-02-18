@@ -20,4 +20,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
       - name: Run Maven Build
-        run: mvn -B clean test
+        # Suppress download messages by Slf4jMavenTransferListener,
+        # see https://blogs.itemis.com/en/in-a-nutshell-removing-artifact-messages-from-maven-log-output
+        run: mvn -B clean test "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn"
