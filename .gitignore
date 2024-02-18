@@ -1,0 +1,10 @@
+target/
+
+.idea/
+*.iml
+
+.classpath
+.project
+.settings
+
+/src/test/resources/test.html
